@@ -2,12 +2,16 @@
 
 ## Lectura de ficheros de texto
 
-En mi practica queria tener almacenados todas las habitaciones alamacenadas en un fichero de texto. Para eso cree una clase que manipula el fichero de texto. El fichero lee letra por letra en un bucle por posicion y lo muestra por pantalla hasta que llega a la ultima posicion (-1). Tambien se puede insertar letra a letra un String a un fichero de texto.
+Java permite crear un archivo de texto en una ruta que tu elijas. Este archivo de format .txt puede ser escrito por el usuario y leido por la consola ademas puedes saber el peso de este archivo generado. Yo he utilizado la biblioteca java.io.File, java.io.FileWriter y java.util.Scanner (el mismo que se usa para lectura del teclado)
+
+Yo he utilizado la generecion de un fichero que guarda toda la informacion de un usuario para poder ser leido por este mismo.
 
 ## Genericos
 
 Una clase y una interfaz se pueden declarar usando tipos genéricos. Una clase o una interfaz que usan el tipo genérico declara una lista de objetos de tipo genérico
-que puede usar cualquier tipo de dato, desde uno primitivo hasta un tipo de objeto yo he querido crear una lista enlazada que pueda incluir todo tipo de objetos como habitaciones,clientes,etc. 
+que puede usar cualquier tipo de dato, desde uno primitivo hasta un tipo de objeto yo he querido crear una lista enlazada que pueda incluir todo tipo de objetos como habitaciones,clientes,etc.
+
+
 
 ## Seguridad con libreria Crypto
 
