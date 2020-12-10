@@ -70,6 +70,30 @@ public class Main {
 	 		 LocalDate date = LocalDate.now();
 	 		 System.out.println("DIA DE HOY"+ date);
 	 		 System.out.println("TU SUELDO ACTUAL ES "+ Trabajador1.getSueldo());
+	 		 System.out.println("LISTA DE TRABAJADORES FICHADOS HOY");
+	 		 
+	 		 Lista<String>listaEmpleados = new Lista(6);
+	 		 listaEmpleados.set(0, nombre);
+	 		 listaEmpleados.set(1, "Berta");
+	 		 listaEmpleados.set(2, "Jose");
+	 		 listaEmpleados.set(3, "Maria");
+	 		 listaEmpleados.set(4, "Mikey");
+	 		 listaEmpleados.set(5, "Steph");
+	 		 
+	 		 Lista<Integer>listaSueldos = new Lista(6);
+	 		 listaSueldos.set(0, Trabajador1.getSueldo());
+	 		 listaSueldos.set(1, 1000);
+	 		 listaSueldos.set(2, 1400);
+	 		 listaSueldos.set(3, 700);
+	 		 listaSueldos.set(4, 2900);
+	 		 listaSueldos.set(5, 1200);
+	 		 
+	 		 for(int i=0;i<6;i++) {
+	 			 System.out.print(listaEmpleados.get(i)+ " ");
+	 			 System.out.println(listaSueldos.get(i)+" ");	 			 
+	 		 }
+	 			 		 
+	 		 
 		 }else {
 			 System.out.println("ACCEDIENDO A CLIENTE");
 		 	 new Cliente(nombre,dni,direccion,telefono,email,contrasena);	
@@ -80,10 +104,15 @@ public class Main {
 		 	 int dias = entradaTeclado.nextInt();
 		 	 LocalDate newDate = date.plusDays(dias);
 		 	 System.out.println("Su dia de salida es: "+ newDate);
-		 	 double precioTotal = habitacion5.getPrecioDiario() * dias;
+		 	 double precioTotal = habitacion5.getPrecioDiario() * dias;		 	
+		 	 
 		 	 
 		 	 
 		 }
+		 
+		 
+		 
+		 
 		 
 		 
 			 
