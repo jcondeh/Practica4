@@ -2,6 +2,7 @@ package practica2TPA;
 
 import java.util.Scanner;
 
+
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.time.LocalDate;
@@ -11,11 +12,31 @@ import java.io.Reader;
 import java.io.InputStreamReader;
 import java.io.FileReader;
 
+import java.io.File; 
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Main {
 	 @SuppressWarnings({ "unused", "resource" })
 	
-	 public static void main(String[] args) {
+	 public static void main(String[] args) throws FileNotFoundException {
 		 Scanner entradaTeclado = new Scanner(System.in);
+		 
+		 File miFichero = new File("Fichero.txt");
+		 System.out.print("LEIBLE:"+miFichero.canRead());
+		 System.out.println("");
+		 
+		 try {
+			if (miFichero.createNewFile()) {
+			        System.out.println("CREANDO: " + miFichero.getName());			        
+			 }else{
+			        System.out.println("YA EXISTE. ");
+			 }
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		 
 		 
 		 System.out.println("Elige idioma y pais (fr FR o en US) ");
@@ -61,6 +82,35 @@ public class Main {
 		 System.out.println(bundle.getString("Contrasena"));
 		 String contrasena = entradaTeclado.nextLine();
 		 
+		 System.out.print("LEIBLE:"+miFichero.canRead());
+		 System.out.println("");
+		 
+		 try {
+			 FileWriter escritura = new FileWriter("Fichero.txt");
+			 escritura.write(nombre+" ");
+			 escritura.write(dni+" ");
+			 escritura.write(direccion+" ");
+			 escritura.write(telefono+" ");
+			 escritura.write(email+" ");
+			 escritura.write(contrasena+" ");
+			 
+			 try {				 
+			     Scanner lectura = new Scanner(miFichero);
+			     while (lectura.hasNextLine()) {
+			    	String data = lectura.nextLine();
+			     	System.out.println(data);
+			      }
+			 }catch (FileNotFoundException e) {
+			      System.out.println("An error occurred.");
+			      e.printStackTrace();
+			    }
+			 
+			 
+		 }catch (IOException e) {
+		      System.out.println("ERROR");
+		      e.printStackTrace();
+		 }
+		 
 		 System.out.println("ACCEDER COMO TRABAJADOR O CLIENTE (1 TRABAJADOR 0 CLIENTE)");
 		 int var = entradaTeclado.nextInt(); 
 		 String opcion;
@@ -88,6 +138,9 @@ public class Main {
 	 		 listaSueldos.set(4, 2900);
 	 		 listaSueldos.set(5, 1200);
 	 		 
+	 		 System.out.println("NOMBRE  SUELDO");
+	 		 System.out.println("");
+	 		 
 	 		 for(int i=0;i<6;i++) {
 	 			 System.out.print(listaEmpleados.get(i)+ " ");
 	 			 System.out.println(listaSueldos.get(i)+" ");	 			 
@@ -109,6 +162,8 @@ public class Main {
 		 	 
 		 	 
 		 }
+		 
+		 
 		 
 		 
 		 
